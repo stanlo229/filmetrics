@@ -11,6 +11,8 @@ namespace FilmetricsTool
         private Guid mSelectedMeasChannelOrSystemGuid;
         private bool mSingleSystemMeasureInProcess;
 
+        public bool IsReady { get { return mFIRemote != null; } }
+
         public void InitializeFIRemote()
         {
             try
@@ -335,9 +337,9 @@ namespace FilmetricsTool
         {
             try
             {
-                string filePath = @"C:\Users\KABLab\Desktop\Filmetrics Framework\example.csv";
+                string filePath = @"C:\Users\haarr\Desktop\Filmetrics Framework\example.csv";
                 mFIRemote.SaveSpectrum(filePath);
-                Console.WriteLine($"Spectrum successfully saved to: {filePath}");
+                Console.WriteLine("Spectrum successfully saved to: " + filePath);
             }
             catch (Exception ex)
             {
@@ -348,9 +350,9 @@ namespace FilmetricsTool
         {
             try
             {
-                string filePath = $@"C:\Users\KABLab\Desktop\Filmetrics Framework\Spectrum_{wellId}.csv";
+                string filePath = @"C:\Users\haarr\Desktop\Filmetrics Framework\Spectrum_" + wellId + ".csv";
                 mFIRemote.SaveSpectrum(filePath);
-                Console.WriteLine($"Spectrum saved to: {filePath} successfully");
+                Console.WriteLine("Spectrum saved to: " + filePath + " successfully");
             }
             catch (Exception ex)
             {
@@ -375,12 +377,17 @@ namespace FilmetricsTool
     {
         static void Main(string[] args)
         {
-            Console.Write("Initializing FIRemote");
+            Console.WriteLine("Initializing FIRemote");
             FormFIRemote controller = new FormFIRemote();
             controller.InitializeFIRemote();
+            if (!controller.IsReady)
+            {
+                Console.WriteLine("Initialization failed. Exiting.");
+                return;
+            }
             controller.SetRecipeMode();
             controller.SetRecipe(args[0]);
-            Console.Write("Initializition Complete");
+            Console.WriteLine("Initialization Complete");
 
             while (true)
             {

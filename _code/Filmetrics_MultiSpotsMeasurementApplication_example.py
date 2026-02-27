@@ -7,7 +7,7 @@ import re
 
 
 BAUD_RATE = 115200
-GRBL_port_path = 'COM13'  #Change this to the desired serial port!
+GRBL_port_path = 'COM12'  #Change this to the desired serial port!
 
 # Mode 1: Glass plate samples
 x_init_1 = 16.805                                                                                                     # set x position of well A1, change to fit to your device!
@@ -25,11 +25,11 @@ height_offset = 1.5
 h_speed = "2000"
 v_speed = "10"
 
-RESULT_CSV = r"C:\Users\KABLab\Desktop\Filmetrics Results-Adedire\sampleretry 1-09.16.2025.csv"
+RESULT_CSV = r"C:\Users\haarr\Research\Repos\filmetrics\results\sample_{date}.csv".format(date=time.strftime("%Y-%m-%d_%H-%M-%S"))
 
 with open(RESULT_CSV, "w", newline="") as f:
     writer = csv.writer(f)
-    writer.writerow(["Well", "X", "Y", "Thickness (nm)", "GOF"])
+    writer.writerow(["Well", "X", "Y", "Thickness (nm)", "GOF", "n", "k"])
 
 def remove_comment(string):
     return string.split(';')[0] if ';' in string else string
@@ -205,13 +205,12 @@ if __name__ == "__main__":
 
     # start C# console program
     process = subprocess.Popen(
-        ["C:/Users/KABLab/Desktop/Filmetrics Framework/Filmetrics/bin/Debug/FilmetricsTool.exe", RecipeName],
+        ["C:/Users/haarr/Desktop/Filmetrics Framework/Filmetrics/bin/Debug/FilmetricsTool.exe", RecipeName],
         stdin=subprocess.PIPE,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         text=True,
         encoding='mbcs',
-        bufsize=1
     )
 
     # wells = []
