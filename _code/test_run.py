@@ -28,6 +28,7 @@ from System.Windows.Forms import FormWindowState
 from System import String
 
 import filmetrics_api
+import thin_film_analysis
 
 if __name__ == "__main__":
     theFIRemote = FIRemote(
@@ -37,11 +38,20 @@ if __name__ == "__main__":
         getattr(FIRemote.ConstructorWarning, 'None'),
         String.Empty
     )
-    # theFIRemote.SetRecipe("SiO2 on Si") # whenever we change recipe, new baseline is needed
+    # theFIRemote.SetRecipe("polynorbornene") # whenever we change recipe, new baseline is needed
     theFIRemote.SetRecipe("SiO2 16kA on Si")
 
-    baseline = True
+    baseline = False
     if baseline:
         filmetrics_api.baseline_acquisition(theFIRemote)
+    else:
+        theFIRemote.AuthenticateRefBac()
 
-    filmetrics_api.measure_sample_plot(theFIRemote, "test_run")
+    stem, results_dir = filmetrics_api.measure_sample_plot(theFIRemote, "test_run")
+
+    thin_film_analysis.run_analysis(
+        reflectance_csv=results_dir / f"{stem}_measured.csv",
+        summary_csv=results_dir / f"{stem}_summary.csv",
+        output_dir=results_dir,
+    )
+    # NOTE: requires encrypted/proprietary n, k file from FILMetrics. But why?

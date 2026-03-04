@@ -39,10 +39,9 @@ theFIRemote = FIRemote(
     theWarning,
     warningMessage
 )
-import pdb; pdb.set_trace()
 # Set recipe
 # theFIRemote.SetRecipe("polynorbornene")
-theFIRemote.SetRecipe("SiO2 on Si")
+theFIRemote.SetRecipe("SiO2 16kA on Si")
 
 baseline = False
 if baseline == True:
@@ -50,13 +49,13 @@ if baseline == True:
     # input("Place the sample and press Enter to continue...")
     theFIRemote.BaselineAcquireSpectrumFromSample()
     # time.sleep(1)
-    # input("Place the reference sample and press Enter to continue...")
-    reflectance_standard = "SiO2"
+    input("Place the reference sample and press Enter to continue...")
+    reflectance_standard = "Si"
     theFIRemote.BaselineSetRefMat(reflectance_standard);
     # time.sleep(1)
     theFIRemote.BaselineAcquireReference();
     # time.sleep(1)
-    # input("Remove the reference sample and press Enter to continue...")
+    input("Remove the reference sample and press Enter to continue...")
     theFIRemote.BaselineAcquireBackgroundAfterRef()
     # time.sleep(1)
     theFIRemote.BaselineCommit()
@@ -64,7 +63,7 @@ if baseline == True:
 elif baseline == False:
     theFIRemote.AuthenticateRefBac()
 theResult = theFIRemote.Measure(False)
-
+import pdb; pdb.set_trace()
 # Retrieve GOF, number of spectrum points, first and last points
 # numpoints = theResult.PrimaryWavelengths.Length
 # print('GOF = ' + str(theResult.GOF))

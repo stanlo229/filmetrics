@@ -1,0 +1,461 @@
+Control Identifiers:
+
+Dialog - 'FILMeasure'    (L52, T52, R1220, B883)
+['Dialog', 'FILMeasureDialog', 'FILMeasure']
+child_window(title="FILMeasure", auto_id="MainForm", control_type="Window")        
+   | 
+   | TabControl - ''    (L60, T152, R1212, B875)
+   | ['TabControlHistory', ' (Calculated)TabControl', 'TabControl', 'TabControlMeasure']
+   | child_window(auto_id="CustomTabMainform", control_type="Tab")
+   |    | 
+   |    | Pane - 'Measure'    (L64, T177, R1208, B871)
+   |    | ['MeasurePane', 'Pane', 'Measure', 'Pane0', 'Pane1', 'Measure0', 'Measure1']
+   |    | child_window(title="Measure", auto_id="4917082", control_type="Pane")    
+   |    |    | 
+   |    |    | Pane - ''    (L64, T177, R1208, B871)
+   |    |    | [' (Calculated)Pane', 'Pane2', ' (Calculated)Pane0', ' (Calculated)Pane1']
+   |    |    | child_window(auto_id="FIControlPanelMeasModule", control_type="Pane")
+   |    |    |    | 
+   |    |    |    | Pane - ''    (L64, T516, R897, B837)
+   |    |    |    | [' (Calculated n)Pane', 'Pane3', ' (Calculated n)Pane0', ' (Calculated n)Pane1']
+   |    |    |    | child_window(auto_id="GraphMeasIndex", control_type="Pane")    
+   |    |    |    |    | 
+   |    |    |    |    | Pane - ''    (L143, T573, R237, B618)
+   |    |    |    |    | [' (Calculated n)Pane2', 'Pane4']
+   |    |    |    |    | child_window(auto_id="PanelLegendOuter", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - ''    (L143, T573, R237, B618)
+   |    |    |    |    |    | [' (Calculated n)Pane3', 'Pane5']
+   |    |    |    |    |    | child_window(auto_id="PanelLegend", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - ''    (L145, T575, R235, B817)
+   |    |    |    |    |    |    | [' (Calculated n)Pane4', 'Pane6']
+   |    |    |    |    |    |    | child_window(auto_id="PanelLegendBorder", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - ' (Calculated n)'    (L145, T575, 
+R237, B595)
+   |    |    |    |    |    |    |    | [' (Calculated n)', ' (Calculated n)Static', 'Static', 'Static0', 'Static1']
+   |    |    |    |    |    |    |    | child_window(title=" (Calculated n)", auto_id="Label0", control_type="Text")
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | Static - ' (Calculated k)'    (L145, T591, 
+R236, B611)
+   |    |    |    |    |    |    |    | [' (Calculated k)Static', ' (Calculated k)', 'Static2']
+   |    |    |    |    |    |    |    | child_window(title=" (Calculated k)", auto_id="Label1", control_type="Text")
+   |    |    |    | 
+   |    |    |    | Pane - 'Zoom:'    (L915, T177, R1226, B871)
+   |    |    |    | ['Zoom:Pane', 'Zoom:', 'Pane7', 'Zoom:Pane0', 'Zoom:Pane1', 'Zoom:0', 'Zoom:1']
+   |    |    |    | child_window(title="Zoom:", auto_id="PanelControlsResults", control_type="Pane")
+   |    |    |    |    | 
+   |    |    |    |    | Pane - 'Zoom:'    (L918, T180, R1209, B851)
+   |    |    |    |    | ['Zoom:Pane2', 'Zoom:2', 'Pane8']
+   |    |    |    |    | child_window(title="Zoom:", auto_id="TableLayoutPanelControlsResults", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - 'Precision:'    (L921, T195, R1184, B247)     
+   |    |    |    |    |    | ['Precision:', 'Pane9', 'Precision:Pane', 'Precision:0', 'Precision:1', 'Precision:Pane0', 'Precision:Pane1']
+   |    |    |    |    |    | child_window(title="Precision:", auto_id="PictureBoxLogo", control_type="Pane")
+   |    |    |    |    |    |
+   |    |    |    |    |    | GroupBox - 'Sample Info'    (L921, T253, R1184, B330)   |    |    |    |    |    | ['Sample Info', 'Sample InfoGroupBox', 'GroupBox', 'GroupBox0', 'GroupBox1']
+   |    |    |    |    |    | child_window(title="Sample Info", auto_id="GroupSampleInfo", control_type="Group")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - 'Precision:'    (L924, T271, R1181, B327)   |    |    |    |    |    |    | ['Precision:2', 'Pane10', 'Precision:Pane2']    
+   |    |    |    |    |    |    | child_window(title="Precision:", auto_id="TableLayoutPanelUserInfo", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - 'Sample ID:'    (L934, T275, R1005, B295)
+   |    |    |    |    |    |    |    | ['Sample ID:Static', 'Sample ID:', 'Static3']
+   |    |    |    |    |    |    |    | child_window(title="Sample ID:", auto_id="LabelMeasSampleId", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Edit - ''    (L1007, T302, R1185, B324)    
+   |    |    |    |    |    |    |    | ['Edit', 'Operator ID:Edit', 'Sample ID:Edit', 'Edit0', 'Edit1', 'Sample ID:Edit0', 'Sample ID:Edit1', 'Operator ID:Edit0', 'Operator ID:Edit1']
+   |    |    |    |    |    |    |    | child_window(auto_id="TextBoxOperatorId", control_type="Edit")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - 'Operator ID:'    (L927, T303, R1005, B323)
+   |    |    |    |    |    |    |    | ['Operator ID:Static', 'Operator ID:', 'Static4']
+   |    |    |    |    |    |    |    | child_window(title="Operator ID:", auto_id="LabelMeasOperatorId", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Edit - 'Precision:'    (L1007, T274, R1185, B296)
+   |    |    |    |    |    |    |    | ['Edit2', 'Sample ID:Edit2']
+   |    |    |    |    |    |    |    | child_window(title="Precision:", auto_id="TextBoxSampleId", control_type="Edit")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | GroupBox - 'Measurement Status'    (L921, T336, R1184, B451)
+   |    |    |    |    |    | ['GroupBox2', 'Measurement StatusGroupBox', 'Measurement Status']
+   |    |    |    |    |    | child_window(title="Measurement Status", auto_id="GroupMeasurementResult", control_type="Group")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Edit - ''    (L928, T377, R1177, B432)
+   |    |    |    |    |    |    | ['Edit3', 'Operator ID:Edit2']
+   |    |    |    |    |    |    | child_window(auto_id="TextBoxMeasThickness", control_type="Edit")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | GroupBox - ''    (L921, T457, R1184, B572)
+   |    |    |    |    |    | ['Operator ID:GroupBox', 'GroupBox3']
+   |    |    |    |    |    | child_window(auto_id="GroupOperation", control_type="Group")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - ''    (L930, T468, R1177, B568)
+   |    |    |    |    |    |    | ['Operator ID:Pane', 'Pane11', 'Operator ID:Pane0', 'Operator ID:Pane1']
+   |    |    |    |    |    |    | child_window(auto_id="TableLayoutPanelMeasureButton", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - 'Baseline:'    (L930, T468, R1173, B526)
+   |    |    |    |    |    |    |    | ['Baseline:Pane', 'Baseline:', 'Pane12']   
+   |    |    |    |    |    |    |    | child_window(title="Baseline:", auto_id="TableLayoutPanelMeasureAndGoTo", control_type="Pane")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - 'Measure'    (L933, T471, R1170, B523)
+   |    |    |    |    |    |    |    |    | ['Button', 'MeasureButton', 'Measure2', 'Button0', 'Button1']
+   |    |    |    |    |    |    |    |    | child_window(title="Measure", auto_id="ButtonMeasure", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - ''    (L930, T529, R1174, B565)     
+   |    |    |    |    |    |    |    | ['Operator ID:Pane2', 'Pane13']
+   |    |    |    |    |    |    |    | child_window(auto_id="TableLayoutPanelBaseAndAnalyze", control_type="Pane")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - 'Baseline...'    (L933, T532, R1046, B562)
+   |    |    |    |    |    |    |    |    | ['Baseline...Button', 'Baseline...', 'Button2']
+   |    |    |    |    |    |    |    |    | child_window(title="Baseline...", auto_id="ButtonMeasBaseline", control_type="Button")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - 'Analyze'    (L1058, T532, R1171, B562)
+   |    |    |    |    |    |    |    |    | ['AnalyzeButton', 'Analyze', 'Button3']
+   |    |    |    |    |    |    |    |    | child_window(title="Analyze", auto_id="ButtonAnalyze", control_type="Button")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | GroupBox - 'Zoom:'    (L921, T578, R1184, B670)      
+   |    |    |    |    |    | ['Zoom:3', 'Zoom:GroupBox', 'GroupBox4']
+   |    |    |    |    |    | child_window(title="Zoom:", auto_id="GroupMeasRecipe", control_type="Group")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - ''    (L1154, T596, R1177, B618)       
+   |    |    |    |    |    |    | ['SiO2 16kA on SiButton', 'Button4']
+   |    |    |    |    |    |    | child_window(auto_id="ButtonGetRecipe", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Static - 'SiO2 16kA on Si'    (L927, T596, R1155, B618)
+   |    |    |    |    |    |    | ['SiO2 16kA on SiStatic', 'Static5', 'SiO2 16kA 
+on Si']
+   |    |    |    |    |    |    | child_window(title="SiO2 16kA on Si", auto_id="LabelRecipeName", control_type="Text")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - 'Edit Recipe...'    (L958, T628, R1147, B662)
+   |    |    |    |    |    |    | ['Edit Recipe...Button', 'Button5', 'Edit Recipe...']
+   |    |    |    |    |    |    | child_window(title="Edit Recipe...", auto_id="ButtonMeasEdit", control_type="Button")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | GroupBox - 'Measurement Results'    (L921, T683, R1184, B848)
+   |    |    |    |    |    | ['Measurement Results', 'GroupBox5', 'Measurement ResultsGroupBox']
+   |    |    |    |    |    | child_window(title="Measurement Results", auto_id="GroupMeasDetails", control_type="Group")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Static - '229'    (L1065, T820, R1124, B842)    
+   |    |    |    |    |    |    | ['229', '229Static', 'Static6']
+   |    |    |    |    |    |    | child_window(title="229", auto_id="LabelMeasCount", control_type="Text")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Static - 'Measurement #'    (L959, T820, R1057, 
+B840)
+   |    |    |    |    |    |    | ['Measurement #', 'Measurement #Static', 'Static7']
+   |    |    |    |    |    |    | child_window(title="Measurement #", auto_id="LabelMeas", control_type="Text")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Edit - 'SiO2 16kA on Si'    (L925, T704, R1181, 
+B816)
+   |    |    |    |    |    |    | ['Edit4', 'SiO2 16kA on SiEdit']
+   |    |    |    |    |    |    | child_window(title="SiO2 16kA on Si", auto_id="RichTextBoxMeas", control_type="Edit")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - 'CurrConfig'    (L1190, T253, R1206, B330)    
+   |    |    |    |    |    | ['CurrConfig', 'CurrConfigPane', 'Pane14', 'CurrConfig0', 'CurrConfig1', 'CurrConfigPane0', 'CurrConfigPane1']
+   |    |    |    |    |    | child_window(title="CurrConfig", auto_id="PictureBoxCRSampleInfo", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - 'CurrConfig'    (L1190, T457, R1206, B572)    
+   |    |    |    |    |    | ['CurrConfig2', 'CurrConfigPane2', 'Pane15']
+   |    |    |    |    |    | child_window(title="CurrConfig", auto_id="PictureBoxCROperation", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - 'CurrConfig'    (L1190, T578, R1206, B670)    
+   |    |    |    |    |    | ['CurrConfig3', 'CurrConfigPane3', 'Pane16']
+   |    |    |    |    |    | child_window(title="CurrConfig", auto_id="PictureBoxCRMeasRecipe", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - 'CurrConfig'    (L1190, T676, R1206, B677)    
+   |    |    |    |    |    | ['CurrConfig4', 'CurrConfigPane4', 'Pane17']
+   |    |    |    |    |    | child_window(title="CurrConfig", auto_id="PictureBoxCRTemplate", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - 'CurrConfig'    (L1190, T683, R1206, B848)    
+   |    |    |    |    |    | ['CurrConfig5', 'CurrConfigPane5', 'Pane18']
+   |    |    |    |    |    | child_window(title="CurrConfig", auto_id="PictureBoxCRMeasDetails", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - 'CurrConfig'    (L1190, T336, R1206, B451)    
+   |    |    |    |    |    | ['CurrConfig6', 'CurrConfigPane6', 'Pane19']
+   |    |    |    |    |    | child_window(title="CurrConfig", auto_id="PictureBoxCRMeasurementResult", control_type="Pane")
+   |    |    |    | 
+   |    |    |    | Pane - ''    (L64, T189, R897, B510)
+   |    |    |    | [' (Calculated)Pane2', 'Pane20']
+   |    |    |    | child_window(auto_id="GraphMeasThickness", control_type="Pane")   |    |    |    |    | 
+   |    |    |    |    | Pane - ''    (L218, T230, R302, B255)
+   |    |    |    |    | [' (Calculated)Pane3', 'Pane21']
+   |    |    |    |    | child_window(auto_id="PanelOverlayLegendOuter", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - ''    (L218, T230, R302, B255)
+   |    |    |    |    |    | [' (Calculated)Pane4', 'Pane22']
+   |    |    |    |    |    | child_window(auto_id="PanelOverlayLegend", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - ''    (L220, T232, R300, B253)
+   |    |    |    |    |    |    | [' (Calculated)Pane5', 'Pane23']
+   |    |    |    |    |    |    | child_window(auto_id="PanelOverlayLegendBorder", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - ' (Calculated)'    (L220, T232, R301, B252)
+   |    |    |    |    |    |    |    | [' (Calculated)Static', ' (Calculated)', 'Static8']
+   |    |    |    |    |    |    |    | child_window(title=" (Calculated)", auto_id="LabelOverlayCurve", control_type="Text")
+   |    |    |    |    | 
+   |    |    |    |    | Pane - ''    (L218, T206, R219, B230)
+   |    |    |    |    | ['Pane24']
+   |    |    |    |    | child_window(auto_id="PanelLegendOuter", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - ''    (L218, T206, R219, B230)
+   |    |    |    |    |    | ['Pane25']
+   |    |    |    |    |    | child_window(auto_id="PanelLegend", control_type="Pane")
+   |    | 
+   |    | TabItem - 'Measure'    (L62, T154, R636, B175)
+   |    | ['MeasureTabItem', 'TabItem', 'Measure3', 'TabItem0', 'TabItem1']        
+   |    | child_window(title="Measure", control_type="TabItem")
+   |    | 
+   |    | TabItem - 'History'    (L636, T154, R1210, B175)
+   |    | ['HistoryTabItem', 'TabItem2', 'History']
+   |    | child_window(title="History", control_type="TabItem")
+   | 
+   | Toolbar - ''    (L60, T107, R184, B132)
+   | ['ToolbarSave', 'ToolbarPrint', 'Toolbar', 'ToolbarToolStripButton1']
+   | child_window(auto_id="ToolStrip1", control_type="ToolBar")
+   |    | 
+   |    | Button - 'Open'    (L60, T108, R83, B130)
+   |    | ['Open', 'OpenButton', 'Button6']
+   |    | child_window(title="Open", control_type="Button")
+   |    | 
+   |    | Button - 'Save'    (L83, T108, R106, B130)
+   |    | ['Save', 'SaveButton', 'Button7']
+   |    | child_window(title="Save", control_type="Button")
+   |    | 
+   |    | Button - 'Print'    (L106, T108, R129, B130)
+   |    | ['Print', 'Button8', 'PrintButton']
+   |    | child_window(title="Print", control_type="Button")
+   |    | 
+   |    | Separator - ''    (L129, T107, R135, B132)
+   |    | ['Separator', 'Separator0', 'Separator1']
+   |    | 
+   |    | Button - 'ToolStripButton1'    (L135, T108, R158, B130)
+   |    | ['ToolStripButton1', 'Button9', 'ToolStripButton1Button', 'ToolStripButton10', 'ToolStripButton11', 'ToolStripButton1Button0', 'ToolStripButton1Button1']   
+   |    | child_window(title="ToolStripButton1", control_type="Button")
+   |    | 
+   |    | Button - 'ToolStripButton1'    (L158, T108, R181, B130)
+   |    | ['ToolStripButton12', 'Button10', 'ToolStripButton1Button2']
+   |    | child_window(title="ToolStripButton1", control_type="Button")
+   | 
+   | Pane - ''    (L1125, T107, R1137, B119)
+   | ['Pane26']
+   | child_window(auto_id="TLPTopControls", control_type="Pane")
+   |    | 
+   |    | Button - 'Measure delay:'    (L1128, T110, R1134, B116)
+   |    | ['Measure delay:Button', 'Button11', 'Measure delay:']
+   |    | child_window(title="Measure delay:", auto_id="ButtonGEMState", control_type="Button")
+   | 
+   | Menu - 'MenuStrip1'    (L60, T83, R1212, B107)
+   | ['Menu', 'MenuStrip1Menu', 'MenuStrip1', 'Menu0', 'Menu1']
+   | child_window(title="MenuStrip1", auto_id="MenuStrip1", control_type="MenuBar")   |    | 
+   |    | MenuItem - 'File'    (L66, T85, R106, B105)
+   |    | ['FileMenuItem', 'File', 'MenuItem', 'MenuItem0', 'MenuItem1']
+   |    | child_window(title="File", control_type="MenuItem")
+   |    |    | 
+   |    |    | MenuItem - 'Open Spectrum...'    (L0, T0, R0, B0)
+   |    |    | ['MenuItem2', 'Open Spectrum...', 'Open Spectrum...MenuItem']       
+   |    |    | child_window(title="Open Spectrum...", control_type="MenuItem")     
+   |    |    | 
+   |    |    | MenuItem - 'Open History...'    (L0, T0, R0, B0)
+   |    |    | ['Open History...', 'Open History...MenuItem', 'MenuItem3']
+   |    |    | child_window(title="Open History...", control_type="MenuItem")      
+   |    |    | 
+   |    |    | MenuItem - 'Import'    (L0, T0, R0, B0)
+   |    |    | ['ImportMenuItem', 'Import', 'MenuItem4']
+   |    |    | child_window(title="Import", control_type="MenuItem")
+   |    |    |    | 
+   |    |    |    | MenuItem - 'Recipe...'    (L0, T0, R0, B0)
+   |    |    |    | ['Recipe...', 'Recipe...MenuItem', 'MenuItem5', 'Recipe...0', 'Recipe...1', 'Recipe...MenuItem0', 'Recipe...MenuItem1']
+   |    |    |    | child_window(title="Recipe...", control_type="MenuItem")       
+   |    |    |    | 
+   |    |    |    | MenuItem - 'Material...'    (L0, T0, R0, B0)
+   |    |    |    | ['Material...', 'Material...MenuItem', 'MenuItem6', 'Material...0', 'Material...1', 'Material...MenuItem0', 'Material...MenuItem1']
+   |    |    |    | child_window(title="Material...", control_type="MenuItem")     
+   |    |    |    | 
+   |    |    |    | MenuItem - 'Layer Stack...'    (L0, T0, R0, B0)
+   |    |    |    | ['Layer Stack...MenuItem', 'MenuItem7', 'Layer Stack...', 'Layer Stack...MenuItem0', 'Layer Stack...MenuItem1', 'Layer Stack...0', 'Layer Stack...1']
+   |    |    |    | child_window(title="Layer Stack...", control_type="MenuItem")  
+   |    |    |    | 
+   |    |    |    | MenuItem - 'License...'    (L0, T0, R0, B0)
+   |    |    |    | ['License...MenuItem', 'License...', 'MenuItem8']
+   |    |    |    | child_window(title="License...", control_type="MenuItem")      
+   |    |    |    | 
+   |    |    |    | MenuItem - 'Baseline Data...'    (L0, T0, R0, B0)
+   |    |    |    | ['Baseline Data...', 'Baseline Data...MenuItem', 'MenuItem9', 'Baseline Data...0', 'Baseline Data...1', 'Baseline Data...MenuItem0', 'Baseline Data...MenuItem1']
+   |    |    |    | child_window(title="Baseline Data...", control_type="MenuItem")   |    |    |    | 
+   |    |    |    | MenuItem - 'Optic Configuration...'    (L0, T0, R0, B0)        
+   |    |    |    | ['Optic Configuration...MenuItem', 'Optic Configuration...', 'MenuItem10']
+   |    |    |    | child_window(title="Optic Configuration...", control_type="MenuItem")
+   |    |    | 
+   |    |    | Separator - ''    (L0, T0, R0, B0)
+   |    |    | ['Separator2']
+   |    |    | 
+   |    |    | MenuItem - 'Save Measured Spectrum...'    (L0, T0, R0, B0)
+   |    |    | ['Save Measured Spectrum...', 'Save Measured Spectrum...MenuItem', 'MenuItem11']
+   |    |    | child_window(title="Save Measured Spectrum...", control_type="MenuItem")
+   |    |    | 
+   |    |    | MenuItem - 'Save Measured n and k...'    (L0, T0, R0, B0)
+   |    |    | ['Save Measured n and k...MenuItem', 'Save Measured n and k...', 'MenuItem12']
+   |    |    | child_window(title="Save Measured n and k...", control_type="MenuItem")
+   |    |    | 
+   |    |    | MenuItem - 'Save Screen to File...'    (L0, T0, R0, B0)
+   |    |    | ['Save Screen to File...', 'Save Screen to File...MenuItem', 'MenuItem13']
+   |    |    | child_window(title="Save Screen to File...", control_type="MenuItem")
+   |    |    | 
+   |    |    | MenuItem - 'Export'    (L0, T0, R0, B0)
+   |    |    | ['MenuItem14', 'ExportMenuItem', 'Export']
+   |    |    | child_window(title="Export", control_type="MenuItem")
+   |    |    |    | 
+   |    |    |    | MenuItem - 'Recipe...'    (L0, T0, R0, B0)
+   |    |    |    | ['Recipe...', 'Recipe...MenuItem', 'MenuItem5', 'Recipe...0', 'Recipe...1', 'Recipe...MenuItem0', 'Recipe...MenuItem1']
+   |    |    |    | child_window(title="Recipe...", control_type="MenuItem")       
+   |    |    |    | 
+   |    |    |    | MenuItem - 'Recipe for FILMeasure 4...'    (L0, T0, R0, B0)    
+   |    |    |    | ['Recipe for FILMeasure 4...MenuItem', 'Recipe for FILMeasure 4...', 'MenuItem16']
+   |    |    |    | child_window(title="Recipe for FILMeasure 4...", control_type="MenuItem")
+   |    |    |    | 
+   |    |    |    | MenuItem - 'Material...'    (L0, T0, R0, B0)
+   |    |    |    | ['Material...', 'Material...MenuItem', 'MenuItem6', 'Material...0', 'Material...1', 'Material...MenuItem0', 'Material...MenuItem1']
+   |    |    |    | child_window(title="Material...", control_type="MenuItem")     
+   |    |    |    | 
+   |    |    |    | MenuItem - 'Layer Stack...'    (L0, T0, R0, B0)
+   |    |    |    | ['Layer Stack...MenuItem', 'MenuItem7', 'Layer Stack...', 'Layer Stack...MenuItem0', 'Layer Stack...MenuItem1', 'Layer Stack...0', 'Layer Stack...1']
+   |    |    |    | child_window(title="Layer Stack...", control_type="MenuItem")  
+   |    |    |    | 
+   |    |    |    | MenuItem - 'Baseline Data...'    (L0, T0, R0, B0)
+   |    |    |    | ['Baseline Data...', 'Baseline Data...MenuItem', 'MenuItem9', 'Baseline Data...0', 'Baseline Data...1', 'Baseline Data...MenuItem0', 'Baseline Data...MenuItem1']
+   |    |    |    | child_window(title="Baseline Data...", control_type="MenuItem")   |    |    |    | 
+   |    |    |    | MenuItem - 'SystemInfo File...'    (L0, T0, R0, B0)
+   |    |    |    | ['MenuItem20', 'SystemInfo File...', 'SystemInfo File...MenuItem']
+   |    |    |    | child_window(title="SystemInfo File...", control_type="MenuItem")
+   |    |    | 
+   |    |    | Separator - ''    (L0, T0, R0, B0)
+   |    |    | ['Separator2']
+   |    |    | 
+   |    |    | MenuItem - 'Page Setup...'    (L0, T0, R0, B0)
+   |    |    | ['Page Setup...MenuItem', 'Page Setup...', 'MenuItem21']
+   |    |    | child_window(title="Page Setup...", control_type="MenuItem")        
+   |    |    | 
+   |    |    | MenuItem - 'Print...'    (L0, T0, R0, B0)
+   |    |    | ['Print...', 'Print...MenuItem', 'MenuItem22']
+   |    |    | child_window(title="Print...", control_type="MenuItem")
+   |    |    | 
+   |    |    | Separator - ''    (L0, T0, R0, B0)
+   |    |    | ['Separator2']
+   |    |    | 
+   |    |    | MenuItem - 'Exit'    (L0, T0, R0, B0)
+   |    |    | ['Exit', 'ExitMenuItem', 'MenuItem23']
+   |    |    | child_window(title="Exit", control_type="MenuItem")
+   |    | 
+   |    | MenuItem - 'Edit'    (L106, T85, R147, B105)
+   |    | ['EditMenuItem', 'Edit5', 'MenuItem24']
+   |    | child_window(title="Edit", control_type="MenuItem")
+   |    |    | 
+   |    |    | MenuItem - 'Material Library...'    (L0, T0, R0, B0)
+   |    |    | ['MenuItem25', 'Material Library...MenuItem', 'Material Library...']   |    |    | child_window(title="Material Library...", control_type="MenuItem")  
+   |    | 
+   |    | MenuItem - 'Setup'    (L147, T85, R200, B105)
+   |    | ['Setup', 'SetupMenuItem', 'MenuItem26']
+   |    | child_window(title="Setup", control_type="MenuItem")
+   |    |    | 
+   |    |    | MenuItem - 'Standard/Background...'    (L0, T0, R0, B0)
+   |    |    | ['MenuItem27', 'Standard/Background...', 'Standard/Background...MenuItem']
+   |    |    | child_window(title="Standard/Background...", control_type="MenuItem")
+   |    |    | 
+   |    |    | MenuItem - 'Display...'    (L0, T0, R0, B0)
+   |    |    | ['Display...MenuItem', 'Display...', 'MenuItem28']
+   |    |    | child_window(title="Display...", control_type="MenuItem")
+   |    |    | 
+   |    |    | MenuItem - 'Raw Signal...'    (L0, T0, R0, B0)
+   |    |    | ['Raw Signal...', 'Raw Signal...MenuItem', 'MenuItem29']
+   |    |    | child_window(title="Raw Signal...", control_type="MenuItem")        
+   |    |    | 
+   |    |    | Separator - ''    (L0, T0, R0, B0)
+   |    |    | ['Separator2']
+   |    |    | 
+   |    |    | MenuItem - 'Access Control...'    (L0, T0, R0, B0)
+   |    |    | ['Access Control...MenuItem', 'Access Control...', 'MenuItem30']    
+   |    |    | child_window(title="Access Control...", control_type="MenuItem")    
+   |    |    | 
+   |    |    | MenuItem - 'Options...'    (L0, T0, R0, B0)
+   |    |    | ['Options...', 'Options...MenuItem', 'MenuItem31']
+   |    |    | child_window(title="Options...", control_type="MenuItem")
+   |    | 
+   |    | MenuItem - 'Acquire'    (L200, T85, R263, B105)
+   |    | ['Acquire', 'AcquireMenuItem', 'MenuItem32']
+   |    | child_window(title="Acquire", control_type="MenuItem")
+   |    |    | 
+   |    |    | MenuItem - 'Acquire One Spectrum'    (L0, T0, R0, B0)
+   |    |    | ['Acquire One Spectrum', 'Acquire One SpectrumMenuItem', 'MenuItem33']
+   |    |    | child_window(title="Acquire One Spectrum", control_type="MenuItem") 
+   |    |    | 
+   |    |    | MenuItem - 'Acquire Continuously'    (L0, T0, R0, B0)
+   |    |    | ['MenuItem34', 'Acquire ContinuouslyMenuItem', 'Acquire Continuously']
+   |    |    | child_window(title="Acquire Continuously", control_type="MenuItem") 
+   |    |    | 
+   |    |    | MenuItem - 'Measure Once'    (L0, T0, R0, B0)
+   |    |    | ['Measure OnceMenuItem', 'Measure Once', 'MenuItem35']
+   |    |    | child_window(title="Measure Once", control_type="MenuItem")
+   |    |    | 
+   |    |    | MenuItem - 'Measure Continuously'    (L0, T0, R0, B0)
+   |    |    | ['Measure Continuously', 'Measure ContinuouslyMenuItem', 'MenuItem36']
+   |    |    | child_window(title="Measure Continuously", control_type="MenuItem") 
+   |    |    | 
+   |    |    | MenuItem - 'Batch'    (L0, T0, R0, B0)
+   |    |    | ['MenuItem37', 'Batch', 'BatchMenuItem']
+   |    |    | child_window(title="Batch", control_type="MenuItem")
+   |    |    |    | 
+   |    |    |    | MenuItem - 'Acquire...'    (L0, T0, R0, B0)
+   |    |    |    | ['Acquire...', 'Acquire...MenuItem', 'MenuItem38']
+   |    |    |    | child_window(title="Acquire...", control_type="MenuItem")      
+   |    |    |    | 
+   |    |    |    | MenuItem - 'Measure...'    (L0, T0, R0, B0)
+   |    |    |    | ['Measure...MenuItem', 'Measure...', 'MenuItem39']
+   |    |    |    | child_window(title="Measure...", control_type="MenuItem")      
+   |    |    |    | 
+   |    |    |    | MenuItem - 'Analyze Spectra...'    (L0, T0, R0, B0)
+   |    |    |    | ['Analyze Spectra...', 'Analyze Spectra...MenuItem', 'MenuItem40']
+   |    |    |    | child_window(title="Analyze Spectra...", control_type="MenuItem")
+   |    |    |    | 
+   |    |    |    | MenuItem - 'Analyze All Spectra In Folder...'    (L0, T0, R0, B0)
+   |    |    |    | ['MenuItem41', 'Analyze All Spectra In Folder...', 'Analyze All Spectra In Folder...MenuItem']
+   |    |    |    | child_window(title="Analyze All Spectra In Folder...", control_type="MenuItem")
+   |    | 
+   |    | MenuItem - 'Help'    (L263, T85, R308, B105)
+   |    | ['Help', 'HelpMenuItem', 'MenuItem42']
+   |    | child_window(title="Help", control_type="MenuItem")
+   |    |    | 
+   |    |    | MenuItem - 'User Manual'    (L0, T0, R0, B0)
+   |    |    | ['User Manual', 'MenuItem43', 'User ManualMenuItem']
+   |    |    | child_window(title="User Manual", control_type="MenuItem")
+   |    |    | 
+   |    |    | Separator - ''    (L0, T0, R0, B0)
+   |    |    | ['Separator2']
+   |    |    | 
+   |    |    | MenuItem - 'Diagnostics...'    (L0, T0, R0, B0)
+   |    |    | ['Diagnostics...MenuItem', 'Diagnostics...', 'MenuItem44']
+   |    |    | child_window(title="Diagnostics...", control_type="MenuItem")       
+   |    |    | 
+   |    |    | MenuItem - 'Request Support...'    (L0, T0, R0, B0)
+   |    |    | ['Request Support...MenuItem', 'Request Support...', 'MenuItem45']  
+   |    |    | child_window(title="Request Support...", control_type="MenuItem")   
+   |    |    | 
+   |    |    | MenuItem - 'About FILMeasure...'    (L0, T0, R0, B0)
+   |    |    | ['About FILMeasure...MenuItem', 'About FILMeasure...', 'MenuItem46']   |    |    | child_window(title="About FILMeasure...", control_type="MenuItem")  
+   | 
+   | TitleBar - ''    (L60, T55, R1212, B83)
+   | ['TitleBar']
+   |    | 
+   |    | Menu - 'System'    (L63, T63, R96, B96)
+   |    | ['System', 'SystemMenu', 'Menu2', 'System0', 'System1']
+   |    | child_window(title="System", auto_id="MenuBar", control_type="MenuBar")  
+   |    |    | 
+   |    |    | MenuItem - 'System'    (L63, T63, R96, B96)
+   |    |    | ['MenuItem47', 'System2', 'SystemMenuItem']
+   |    |    | child_window(title="System", control_type="MenuItem")
+   |    | ['MinimizeButton', 'Button12', 'Minimize']
+   |    | child_window(title="Minimize", control_type="Button")
+   |    |
+   |    | Button - 'Maximize'    (L1072, T48, R1142, B84)
+   |    | ['MaximizeButton', 'Maximize', 'Button13']
+   |    | child_window(title="Maximize", control_type="Button")
+   |    |
+   |    | Button - 'Close'    (L1142, T48, R1213, B84)
+   |    | ['Close', 'Button14', 'CloseButton']
+   |    | child_window(title="Close", control_type="Button")
