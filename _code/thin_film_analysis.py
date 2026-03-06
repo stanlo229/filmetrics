@@ -51,6 +51,9 @@ def _build_si_interpolators():
     k = data[:, 2]
     mask = (wl_nm >= 175) & (wl_nm <= 2100)
     wl_nm, n, k = wl_nm[mask], n[mask], k[mask]
+    # Store raw tabulated data for plotting
+    global _SI_WL_NM, _SI_N, _SI_K
+    _SI_WL_NM, _SI_N, _SI_K = wl_nm, n, k
     n_interp = scipy.interpolate.PchipInterpolator(wl_nm, n, extrapolate=True)
     # log(k) only on k > 0 points; PCHIP extrapolates smoothly into the NIR
     kpos = k > 0
@@ -64,7 +67,7 @@ _SI_N_INTERP, _SI_LOGK_INTERP = _build_si_interpolators()
 
 
 def _si_nk(wl_nm: np.ndarray):
-    """Interpolate Si n, k at requested wavelengths (nm) using Palik (1985) data.
+    """Evaluate Si n, k at requested wavelengths (nm) via PCHIP on Palik (1985) data.
 
     n: PCHIP — shape-preserving, safe for non-monotone UV data.
     k: PCHIP on log(k) using k>0 points only; extrapolates smoothly into NIR.
@@ -73,6 +76,46 @@ def _si_nk(wl_nm: np.ndarray):
     n = _SI_N_INTERP(wl_nm)
     k = np.exp(_SI_LOGK_INTERP(wl_nm))
     return n, np.maximum(k, 0.0)
+
+
+def plot_si_nk(output_path=None):
+    """Plot Si n(λ) and k(λ): Palik tabulated points + PCHIP interpolation.
+
+    Parameters
+    ----------
+    output_path : str or Path, optional
+        PNG path.  Defaults to Si_optical_constants_Palik.png next to the CSV.
+    """
+    wl_dense = np.linspace(_SI_WL_NM[0], _SI_WL_NM[-1], 2000)
+    n_dense, k_dense = _si_nk(wl_dense)
+
+    fig, axes = plt.subplots(2, 1, figsize=(8, 7), sharex=True)
+    fig.suptitle("Si optical constants — Palik (1985) + PCHIP interpolation", fontsize=9)
+
+    axes[0].plot(wl_dense, n_dense, color="royalblue", lw=1.5, label="PCHIP")
+    axes[0].scatter(_SI_WL_NM, _SI_N, color="royalblue", s=20, zorder=5, label="Palik data")
+    axes[0].set_ylabel("n  (refractive index)")
+    axes[0].legend(fontsize=8)
+    axes[0].grid(True, linestyle="--", alpha=0.4)
+
+    k_pos_mask = _SI_K > 0
+    axes[1].plot(wl_dense, k_dense, color="firebrick", lw=1.5, label="PCHIP")
+    axes[1].scatter(
+        _SI_WL_NM[k_pos_mask], _SI_K[k_pos_mask],
+        color="firebrick", s=20, zorder=5, label="Palik data"
+    )
+    axes[1].set_yscale("log")
+    axes[1].set_ylabel("k  (extinction coefficient, log scale)")
+    axes[1].set_xlabel("Wavelength (nm)")
+    axes[1].legend(fontsize=8)
+    axes[1].grid(True, linestyle="--", alpha=0.4, which="both")
+
+    fig.tight_layout()
+    if output_path is None:
+        output_path = _SI_CSV.with_suffix(".png")
+    fig.savefig(output_path, dpi=150, bbox_inches="tight")
+    print(f"Saved: {output_path}")
+    plt.close(fig)
 
 
 # ---------------------------------------------------------------------------
@@ -133,9 +176,9 @@ def cauchy_n(wl_nm: np.ndarray, A: float, B: float, C: float) -> np.ndarray:
 # ---------------------------------------------------------------------------
 def _tmm_r(wl_nm: np.ndarray, n1_arr: np.ndarray, d_nm: float) -> np.ndarray:
     """Core TMM: R(λ) for air / film(n1_arr, k=0) / Si substrate."""
+    n_si, k_si = _si_nk(wl_nm)
     n0 = np.ones(len(wl_nm), dtype=complex)
     n1 = n1_arr.astype(complex)
-    n_si, k_si = _si_nk(wl_nm)
     n2 = n_si - 1j * k_si
 
     r01 = (n0 - n1) / (n0 + n1)
@@ -405,9 +448,9 @@ def main():
     parser = argparse.ArgumentParser(
         description="Fit Sellmeier/Cauchy n(λ) to a reflectance spectrum (air/film/Si TMM)"
     )
-    parser.add_argument("reflectance_csv", help="_measured.csv or _calculated.csv")
+    parser.add_argument("reflectance_csv", nargs="?", help="_measured.csv or _calculated.csv")
     parser.add_argument(
-        "summary_csv", help="_summary.csv  (needs column: thickness_nm)"
+        "summary_csv", nargs="?", help="_summary.csv  (needs column: thickness_nm)"
     )
     parser.add_argument(
         "--output",
@@ -420,7 +463,15 @@ def main():
         default="sellmeier",
         help="Dispersion model to fit (default: sellmeier)",
     )
+    parser.add_argument(
+        "--plot-si",
+        action="store_true",
+        help="Plot the Si Palik data + PCHIP interpolation and exit",
+    )
     args = parser.parse_args()
+    if args.plot_si:
+        plot_si_nk()
+        return
     run_analysis(args.reflectance_csv, args.summary_csv, args.output, args.model)
 
 
