@@ -1,30 +1,77 @@
 # -*- coding: utf-8 -*-
 """
-thin_film_analysis.py — Extract n(λ)/k(λ) from reflectance using Sellmeier + TMM
+thin_film_analysis.py — Extract n(λ)/k(λ) from reflectance spectra via TMM fitting
 
-Stack assumed:  air (n=1)  /  thin film (Sellmeier, k=0)  /  Si substrate
+Stack assumed:  air (n=1)  /  thin film  /  Si substrate (Palik 1985, PCHIP)
 
-Usage:
-    python thin_film_analysis.py <reflectance_csv> <summary_csv> [--output <dir>]
+-------------------------------------------------------------------------------
+USAGE
+-------------------------------------------------------------------------------
 
-Example:
-    python _code/thin_film_analysis.py \
-        results/test_run_2026-03-03_145827_measured.csv \
-        results/test_run_2026-03-03_145827_summary.csv
+1. Fit a single dispersion model (thickness fixed from summary CSV):
 
-Inputs:
-    reflectance_csv  _measured.csv or _calculated.csv
-                     columns: wavelength_nm, reflectance  (values in 0–1)
-    summary_csv      _summary.csv  (must contain column thickness_nm)
+    python _code/thin_film_analysis.py <reflectance_csv> <summary_csv>
+    python _code/thin_film_analysis.py <reflectance_csv> <summary_csv> --model cauchy
+    python _code/thin_film_analysis.py <reflectance_csv> <summary_csv> --model tauc_lorentz
 
-Options:
-    --model {sellmeier,cauchy,both}   dispersion model to fit (default: sellmeier)
+2. Fit multiple models simultaneously:
 
-Outputs (written to --output dir, default: same folder as reflectance_csv):
-    <stem>_sellmeier.fitnk   Sellmeier n/k in Filmetrics v3 tabulated format
-    <stem>_cauchy.fitnk      Cauchy    n/k in Filmetrics v3 tabulated format
-    <stem>_<model>_nk.csv    wavelength_nm, n, k
-    <stem>_<model>.png       two-panel plot: reflectance fit(s) + n(λ)
+    python _code/thin_film_analysis.py <reflectance_csv> <summary_csv> --model both
+        # 'both' = sellmeier + cauchy
+
+    python _code/thin_film_analysis.py <reflectance_csv> <summary_csv> --model all
+        # 'all'  = sellmeier + cauchy + tauc_lorentz
+
+3. Free-d mode — fit n and thickness d simultaneously (use when the film
+   material is not in the Filmetrics library and d from the instrument is
+   unreliable):
+
+    python _code/thin_film_analysis.py <reflectance_csv> <summary_csv> --model tauc_lorentz --free-d
+        # uses summary CSV d as the initial guess for the grid search
+
+    python _code/thin_film_analysis.py <reflectance_csv> <summary_csv> --model sellmeier --free-d --d0 500
+        # --d0 NM overrides the initial thickness guess (nm)
+
+4. Plot Si substrate optical constants (Palik 1985 + PCHIP interpolation):
+
+    python _code/thin_film_analysis.py --plot-si
+
+-------------------------------------------------------------------------------
+INPUTS
+-------------------------------------------------------------------------------
+    reflectance_csv   _measured.csv or _calculated.csv
+                      columns: wavelength_nm, reflectance  (values in 0–1)
+    summary_csv       _summary.csv  (must contain column: thickness_nm)
+
+-------------------------------------------------------------------------------
+OPTIONS
+-------------------------------------------------------------------------------
+    --model {sellmeier,cauchy,tauc_lorentz,both,all}
+                      Dispersion model to fit (default: sellmeier).
+                      sellmeier     — 3-param Sellmeier, k=0 (transparent films)
+                      cauchy        — 3-param Cauchy A+B/λ²+C/λ⁴, k=0
+                      tauc_lorentz  — 5-param Tauc-Lorentz, KK-consistent n+k
+                                      (use for UV-absorbing / organic films)
+                      both          — sellmeier + cauchy
+                      all           — sellmeier + cauchy + tauc_lorentz
+
+    --free-d          Fit thickness d simultaneously with n (joint optimisation).
+                      A log-spaced grid search over d is used to escape fringe-
+                      order local minima. Useful when n is unknown (new polymer).
+
+    --d0 NM           Override the initial d guess (nm) for --free-d.
+                      Defaults to the thickness in summary_csv.
+
+    --output DIR      Output directory (default: same folder as reflectance_csv).
+
+    --plot-si         Plot Si Palik data + PCHIP interpolation and exit.
+
+-------------------------------------------------------------------------------
+OUTPUTS  (written to --output dir)
+-------------------------------------------------------------------------------
+    <stem>_<model>.fitnk       n/k table in Filmetrics v3 tabulated format
+    <stem>_<model>_nk.csv      wavelength_nm, n, k
+    <stem>_<model[s]>.png      reflectance fit(s), n(λ), [k(λ) if non-zero]
 """
 
 import argparse
